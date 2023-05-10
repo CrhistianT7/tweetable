@@ -1,0 +1,60 @@
+<div id="<%= dom_id user %>">
+  <h2>Profile</h2>
+
+  <div>
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar, class: "profile-photo", alt: "#{user.username} profile picture"%>
+    <% else %>
+      <%= image_tag "blank-profile.png", class: "profile-photo"%>
+    <% end%>
+  </div>
+
+  <h3>
+    <%= user.name %>
+  </h3>
+
+  <label>
+    @<%= user.username %>
+  </label>
+
+  <p>joined date</p>
+  <div><%= link_to "edit profile", edit_user_registration_path%></div>
+
+  
+  <button>Tweets(1)</button>
+  <button>Likes(2)</button>
+
+  <% user.tweets.each do |tweet|%>
+    <div class="tweet-card">
+      <div class="tweet-card__header">
+        <% if tweet.user.avatar.attached?%>
+          <%= image_tag tweet.user.avatar, class: "tweet-card__user-profile-image " %>
+        <% else %>
+          <%= image_tag "blank-profile.png", class: "tweet-card__user-profile-image " %>
+        <% end%>
+        <div class="tweet-card__user-profile-info">
+          <div class="names">
+            <p class="name"><%= tweet.user.name%> </p>
+            <p class="username">@<%= tweet.user.username%></p>
+          </div>
+          <span>time</span>
+        </div>
+      </div>
+      <%= tweet.body%>
+      <div class="tweet-card__footer">
+        <div class="tweet-modification">
+          <p>d</p>
+          <p>e</p>
+        </div>
+        <div class="tweet-information">
+          <p>r (<%=tweet.replies_count%>)</p>
+          <p>l (<%=tweet.likes_count%>)</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div>
+    here comes likes
+  </div>
+</div>

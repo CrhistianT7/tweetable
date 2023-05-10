@@ -1,0 +1,61 @@
+.tweet-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 8px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.tweet-card__header {
+  display: flex;
+  gap: 4px;
+}
+
+.tweet-card__user-profile-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.tweet-card__user-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-card__user-profile-info .names {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.tweet-card__user-profile-info .names .name {
+  color: #303036;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.tweet-card__user-profile-info .names .username{
+  color: #f490b1;
+  font-family: "Inter";
+  margin: 0;
+}
+
+.tweet-card__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-card__footer .tweet-modification {
+  display: flex;
+  gap: 24px;
+}
+
+.tweet-card__footer .tweet-information {
+  display: flex;
+  gap: 10px;
+}
